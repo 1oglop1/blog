@@ -1,0 +1,39 @@
+.linenos .linenodiv , .highlight .hll { background-color: #ffffcc }
+.linenos .linenodiv , .highlight  { background: #ffffff; }
+.linenos .linenodiv .c, .highlight .c { font-style: italic } /* Comment */
+.linenos .linenodiv .err, .highlight .err { border: 1px solid #FF0000 } /* Error */
+.linenos .linenodiv .k, .highlight .k { font-weight: bold } /* Keyword */
+.linenos .linenodiv .ch, .highlight .ch { font-style: italic } /* Comment.Hashbang */
+.linenos .linenodiv .cm, .highlight .cm { font-style: italic } /* Comment.Multiline */
+.linenos .linenodiv .cpf, .highlight .cpf { font-style: italic } /* Comment.PreprocFile */
+.linenos .linenodiv .c1, .highlight .c1 { font-style: italic } /* Comment.Single */
+.linenos .linenodiv .cs, .highlight .cs { font-style: italic } /* Comment.Special */
+.linenos .linenodiv .ge, .highlight .ge { font-style: italic } /* Generic.Emph */
+.linenos .linenodiv .gh, .highlight .gh { font-weight: bold } /* Generic.Heading */
+.linenos .linenodiv .gp, .highlight .gp { font-weight: bold } /* Generic.Prompt */
+.linenos .linenodiv .gs, .highlight .gs { font-weight: bold } /* Generic.Strong */
+.linenos .linenodiv .gu, .highlight .gu { font-weight: bold } /* Generic.Subheading */
+.linenos .linenodiv .kc, .highlight .kc { font-weight: bold } /* Keyword.Constant */
+.linenos .linenodiv .kd, .highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.linenos .linenodiv .kn, .highlight .kn { font-weight: bold } /* Keyword.Namespace */
+.linenos .linenodiv .kr, .highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.linenos .linenodiv .s, .highlight .s { font-style: italic } /* Literal.String */
+.linenos .linenodiv .nc, .highlight .nc { font-weight: bold } /* Name.Class */
+.linenos .linenodiv .ni, .highlight .ni { font-weight: bold } /* Name.Entity */
+.linenos .linenodiv .ne, .highlight .ne { font-weight: bold } /* Name.Exception */
+.linenos .linenodiv .nn, .highlight .nn { font-weight: bold } /* Name.Namespace */
+.linenos .linenodiv .nt, .highlight .nt { font-weight: bold } /* Name.Tag */
+.linenos .linenodiv .ow, .highlight .ow { font-weight: bold } /* Operator.Word */
+.linenos .linenodiv .sa, .highlight .sa { font-style: italic } /* Literal.String.Affix */
+.linenos .linenodiv .sb, .highlight .sb { font-style: italic } /* Literal.String.Backtick */
+.linenos .linenodiv .sc, .highlight .sc { font-style: italic } /* Literal.String.Char */
+.linenos .linenodiv .dl, .highlight .dl { font-style: italic } /* Literal.String.Delimiter */
+.linenos .linenodiv .sd, .highlight .sd { font-style: italic } /* Literal.String.Doc */
+.linenos .linenodiv .s2, .highlight .s2 { font-style: italic } /* Literal.String.Double */
+.linenos .linenodiv .se, .highlight .se { font-weight: bold; font-style: italic } /* Literal.String.Escape */
+.linenos .linenodiv .sh, .highlight .sh { font-style: italic } /* Literal.String.Heredoc */
+.linenos .linenodiv .si, .highlight .si { font-weight: bold; font-style: italic } /* Literal.String.Interpol */
+.linenos .linenodiv .sx, .highlight .sx { font-style: italic } /* Literal.String.Other */
+.linenos .linenodiv .sr, .highlight .sr { font-style: italic } /* Literal.String.Regex */
+.linenos .linenodiv .s1, .highlight .s1 { font-style: italic } /* Literal.String.Single */
+.linenos .linenodiv .ss, .highlight .ss { font-style: italic } /* Literal.String.Symbol */
