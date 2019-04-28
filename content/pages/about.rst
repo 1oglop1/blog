@@ -1,6 +1,0 @@
-About
-=====
-
-
-:template: about
-
