@@ -1,0 +1,303 @@
+﻿//html {
+//  font-size: 62.5%;
+//}
+
+//body {
+//
+//}
+//
+//.content {
+//  flex: 1;
+//}
+
+//@media only screen and (max-width: 768px) {
+//  main {
+//    width: 100%;
+//  }
+//}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  //font-family: "Helvetica Neue", Helvetica, Arial, Calibri, sans-serif /* font-family: Palatino, Cambria, Georgia, serif;;; */;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // dropdown hover + click on mobile
+  // more info https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  // for sticky footer
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  .navbar {
+    color: white;
+
+    .nav-link {
+      color: white;
+    }
+
+    .active > .nav-link {
+      color: #15aabf;
+    }
+
+    #search-form {
+      float: right;
+    }
+
+    .social-right {
+      .social-right-wrapper {
+        ul {
+          li {
+            list-style-type: none;
+            display: inline-block;
+
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .site-jumbotron {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.license-img {
+  width: 1.3rem;
+}
+
+footer {
+  p {
+    margin-bottom: 0;
+  }
+
+  img {
+    display: inline;
+    border-radius: 0;
+  }
+}
+
+.blog-all-articles {
+
+  .article-summary, .article-title {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.blog-article-footer {
+  .author-avatar {
+    width: 80px;
+  }
+
+  .article-author-name {
+    font-size: 1.125rem;
+  }
+
+  .article-author-bio {
+    font-size: 0.875rem;
+  }
+}
+
+.share {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .25em;
+}
+
+// article images
+.figure {
+  //background-color: #fff;
+  //padding: 5px;
+  font-size: .75em;
+  display: table;
+  //border: 1px solid #bbb;
+  //border-radius: 3px;
+  //padding: 4px;
+  //float: left;
+  margin: 0 0 1rem 0;
+  //box-shadow: 4px 4px 4px 0px rgba(128, 128, 128, 0.5);
+
+
+  p.caption {
+    font-size: 90%;
+    margin-bottom: 0.3em;
+  }
+
+  .legend {
+    display: table-caption;
+    caption-side: bottom;
+    color: #6c757d;
+    //background: #fff;
+    padding-left: 1em;
+    font-style: italic;
+  }
+}
+
+
+// article images modal
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  //z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+  color: #696969;
+
+  .close {
+    color: #ccc;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+
+  #caption {
+    //width: 80%;
+    //margin: 0 auto;
+    text-align: center;
+    //margin: auto;
+  }
+
+  .modal-content {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+// site search
+.btb-in-input {
+  overflow: hidden;
+
+  button {
+    color: grey;
+    background: white;
+    border: 1px solid rgb(206, 212, 218);
+    border-left: 0;
+  }
+}
+
+
+ul.tags {
+  list-style-type: none;
+  max-width: 50%;
+
+  li {
+    display: inline-block;
+  }
+}
+
+ul.categories {
+  list-style-type: none;
+  max-width: 50%;
+  max-height: 12em;
+
+  li {
+    display: inline-block;
+  }
+}
+
+
+$background-color: hsl(50, 5, 97);
+$black: hsl(200, 40, 10);
+$white: $background-color;
+$base-font-size: 1.25em;
+$base-line-height: 1.4em;
+
+blockquote {
+  position: relative;
+  font-family: 'Sanchez', serif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 2em;
+  margin-inline-end: 2em;
+
+  p {
+    font-style: italic;
+    margin-bottom: 0px;
+  }
+
+  .attribution {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.6em;
+    font-weight: 700;
+    color: darken($white, 15%);
+    text-align: right;
+    margin-right: 5em;
+
+    //&:before {
+    //  content: '\2015';
+    //}
+  }
+
+  &:before {
+    content: '\201C';
+    position: absolute;
+    top: 0.25em;
+    left: -0.15em;
+    color: darken($white, 7%);
+    font-size: 6em;
+    z-index: -1;
+  }
+}
+
+
+//.flexy {
+//  display: flex;
+//  flex-direction: column;
+//  flex-wrap: wrap;
+//  align-content: flex-start;
+//  justify-content: flex-start;
+//  height: 90vh;
+//}
+//.nav-tabs {
+//  display: flex;
+//
+//  li {
+//    display: flex;
+//    flex: 1;
+//
+//    a {
+//      flex: 1;
+//    }
+//  }
+//}

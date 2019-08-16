@@ -1,0 +1,62 @@
+<div>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#NavBar"
+                aria-controls="NavBar"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="NavBar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ SITEURL }}">Blog<span class="sr-only">(current)</span></a>
+                </li>
+                {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for page in pages %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+                    </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+            {#            <!--########### SOCIAL #########-->#}
+            <div class="social-right">
+                <div class="social-right-wrapper">
+                    <ul class="navbar-nav flex-row justify-content-center flex-wrap">
+                        {#                        <!--################### SOCIALS ####################-->#}
+                        {% for url, fa_name in SOCIAL %}
+                            {#                            ("https://gitlab.com/1oglop1", "gitlab"),#}
+                            <li class="nav-item mx-sm-0 mx-2"><a class="nav-link" href="{{ url }}"><i
+                                    class="fab fa-{{ fa_name }}"></i></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!--############# SEARCH ################-->
+            <form class="form-inline my-2 my-lg-0">
+                <div class="input-group input-group-sm btb-in-input">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                        <button class="btn" title="Search" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            {#            <form action="{{ SEARCH_URL | default(SITEURL~'/search.html') }}">#}
+            {#                <div class="form-group mb-md-0 input-group-sm huaa">#}
+            {#                    <button type="submit" class="btn btn-secondary form-control-feedback" title="Search">#}
+            {#                                        <a href="#" class="form-control-feedback"><span class="fas fa-search"></span></a>#}
+            {#                    <button class="btn btn-secondary form-control-feedback" title="Search" type="submit">#}
+            {#                        <i class="fas fa-search"></i>#}
+            {#                    </button>#}
+            {#                    <input type="text" class="form-control" placeholder="Search">#}
+            {#                    <input id="tipue_search_input" class="form-control" placeholder="Search"#}
+            {#                           aria-label="Search" name="q" required>#}
+            {#                </div>#}
+            {#            </form>#}
+        </div>
+    </nav>
+</div>

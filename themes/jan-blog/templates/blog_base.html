@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block blog_nav %}
+    {####### BLOG NAVIGATION #######}
+{% include 'includes/blog_navigation.html' %}
+{% endblock blog_nav %}
+{% block main_content %}
+    {% if SIDEBAR %}
+        {#            TODO Integrate sidebar to blog nav#}
+        {% set _sidebar_on='col-md-9 ml-sm-auto' %}
+    {% endif %}
+    <div class="{{ _sidebar_on }} pt-3 px-4">
+        {% block blog_main_content %}
+
+        {% endblock blog_main_content %}
+    </div>
+    {% if SIDEBAR %}
+        <div class="col-md-3 pt-3 px-4 d-none d-md-block">
+            {% include 'includes/blog_sidebar.html' %}
+        </div>
+    {% endif %}
+{% endblock main_content %}

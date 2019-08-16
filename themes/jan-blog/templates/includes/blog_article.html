@@ -1,0 +1,150 @@
+<div class="row">
+    <article class="blog-article d-flex flex-column">
+        <header>
+            <h1>{{ article.title }}</h1>
+
+            {% if article.tags %}
+                <p>{% for tag in article.tags %}
+                    <a class="badge" href="{{ SITEURL }}/{{ tag.url }}"><i class="fas fa-hashtag fa-sm"></i>{{ tag.name }}</a>{% endfor %}</p>
+            {% endif %}
+
+
+            <p>
+                <time datetime="{{ article.date }}">{{ article.locale_date }}</time>{% if article.modified %}&bull;
+                <time datetime="{{ article.modified }}">
+                    Updated: {{ article.modified.strftime(article.date_format) }}</time>{% endif %}</p>
+        </header>
+
+        <p class="blog-article-content">{{ article.content }}</p>
+
+        {% if article.series %}
+            <p>This post is part {{ article.series.index }} of the "{{ article.series.name }}" series:</p>
+            <ol class="parts">
+                {% for part_article in article.series.all %}
+                    <li {% if part_article == article %}class="active"{% endif %}>
+                        <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+
+        <section class="share d-flex flex-row">
+            {% set article_quote_url = (SITEURL~'/'~article.url)|quoteplus %}
+            {% set fa_classes = "fa-2x fa-fw" %}
+            {% set a_classes = "d-none d-md-block mx-1" %}
+            <div class="flex-fill">
+                <a>
+                    <i class="fas fa-lg fa-angle-double-up" id="article-scroll-up"></i>
+                </a>
+            </div>
+            <div class="d-flex flex-row">
+                <a>
+                    <i class="fas fa-2x fa-link" id="article-link" data-toggle="tooltip" data-placement="bottom"
+                       title="Copy article url to clipboard."></i>
+                </a>
+
+                <a class="{{ a_classes }}"
+                   href="http://twitter.com/share?text={{ article.title|quoteplus }}&amp;url={{ article_quote_url }}"
+                   title="Share on Twitter"
+                   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="fab {{ fa_classes }} fa-twitter-square"></i>
+                </a>
+                <a class="{{ a_classes }}"
+                   href="https://www.facebook.com/sharer/sharer.php?u={{ article_quote_url }}"
+                   title="Share on Facebook"
+                   onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="fab {{ fa_classes }} fa-facebook-square" style="margin-left: -8px"></i>
+                </a>
+
+                <a class="{{ a_classes }}"
+                   href="https://www.linkedin.com/shareArticle?mini=true&url={{ article_quote_url }}&title={{ article.title|urlencode }}&summary={{ "some summary" }}&source={{ SITEURL|quoteplus }}"
+                   title="Share on LinkedIn"
+                   onclick="window.open(this.href, 'linkedin-share','width=580,height=410');return false;"
+                        {#               rel="noopener" target="_blank"#}
+                >
+                    <i class="fab {{ fa_classes }} fa-linkedin" style="margin-left: -8px"></i>
+                </a>
+            </div>
+        </section>
+
+        <footer class="blog-article-footer">
+            <hr class="mt-0">
+            {% if AUTHOR_BYLINE %}
+                <div class="article-author-byline d-flex flex-row">
+                    <div class="author-avatar mr-2">
+                        <img class="rounded-circle" src="{{ AUTHOR_BYLINE.avatar_url }}">
+                    </div>
+                    <div class="d-flex flex-column align-self-center">
+                        <h4 class="article-author-name">{{ article.author }}</h4>
+                        {% if AUTHOR_BYLINE.bio %}
+                            <p class="article-author-bio">{{ AUTHOR_BYLINE.bio }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {#                <span class="badge">Like</span>#}
+            {#                <span class="badge badge-info">share</span> <span class="badge badge-pill">and</span> <span#}
+            {#                    class="badge badge-pill badge-danger">subscribe</span></p>#}
+            {#            <button type="button" class="btn btn-secondary" id="article-up-button">Up</button>#}
+            {#            <button class="test" >Button 1</button>#}
+            {#            <button class="test" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Button 2</button>#}
+        </footer>
+    </article>
+</div>
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
+</div>
+
+{#        <br/>author - {{ article.author }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        authors - {{ article.authors }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        category - {{ article.category }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        content - {{ article.content }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        date - {{ article.date }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        modified - {% if article.modified %}{{ article.modified.strftime(article.date_format) }}{% endif %}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        date_format - {{ article.date_format }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        default_templ - {{ article.default_template }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        in_default_la - {{ article.in_default_lang }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        lang - {{ article.lang }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        locale_date - {{ article.locale_date }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        metadata - {{ article.metadata }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        save_as - {{ article.save_as }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        slug - {{ article.slug }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        source_path - {{ article.source_path }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        status - {{ article.status }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        summary - {{ article.summary }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        tags - {{ article.tags }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        template - {{ article.template }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        title - {{ article.title }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        translations - {{ article.translations }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+{#        url - {{ article.url }}<br/>#}
+{#        ----------------------------------------------<br/>#}
+
+{#    {% for x in article.__dict__ %}#}
+{#        <b>'{{ x }}':</b>#}
+{#        {{ article.__dict__[x].__repr__() }},#}
+{#        <br/>#}
+{#    {% endfor %}#}
